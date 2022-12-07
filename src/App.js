@@ -11,7 +11,6 @@ import Posts from './components/Posts/Posts';
 import SearchBar from './components/SearchBar/SearchBar';
 // Import the dummyData
 import LikeSection from './components/Posts/LikeSection';
-import Post from './components/Posts/Post';
 import dummyData from './dummy-data';
 import './App.css';
 
@@ -35,23 +34,26 @@ const App = () => {
      */
 
     const increaseLikes = () => {
-      // setPost( props.posts.map(post=>{
-      //   if(postId === post.id){
-      //     [...post + 1]
-      //   } else {
-      //     post
-      //   }
-      // }) ) 
+      setPosts( posts.map(post=>{
+        if(postId === post.id){
+          let newPost = {...post}
+          newPost.likes++
+          return newPost
+        } else {
+           return post
+        }
+      }) ) 
 
-    }        
+    }  
+    
+    increaseLikes()
   };
 
   return (
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       <SearchBar />
-      <Posts posts={posts} />
-      <LikeSection numberOfLikes={posts[0].likes} />
+      <Posts posts={posts} likePost= {likePost} />
     {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
