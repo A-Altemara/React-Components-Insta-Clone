@@ -10,13 +10,14 @@ import React, { useState } from 'react';
 import Posts from './components/Posts/Posts';
 import SearchBar from './components/SearchBar/SearchBar';
 // Import the dummyData
+import LikeSection from './components/Posts/LikeSection';
 import Post from './components/Posts/Post';
 import dummyData from './dummy-data';
 import './App.css';
 
 const App = () => {
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
-  const [post, setPost] = useState(dummyData)
+  const [posts, setPosts] = useState(dummyData)
   // This state is the source of truth for the data inside the app. You won't be needing dummyData anymore.
   // To make the search bar work (which is stretch) we'd need another state to hold the search term.
 
@@ -44,14 +45,16 @@ const App = () => {
 
     }        
   };
-console.log("test")
+
   return (
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       <SearchBar />
-      {/* <Posts userName={post.userName} /> */}
+      <Posts posts={posts} />
       
-      <Post post={dummyData[0]} />
+      <Post post={posts[0]} />
+      <LikeSection numberOfLikes={posts[0].likes} />
+      
             {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
