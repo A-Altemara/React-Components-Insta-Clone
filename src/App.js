@@ -51,11 +51,8 @@ const App = () => {
       {/* Add SearchBar and Posts here to render them */}
       <SearchBar />
       <Posts posts={posts} />
-      
-      <Post post={posts[0]} />
       <LikeSection numberOfLikes={posts[0].likes} />
-      
-            {/* Check the implementation of each component, to see what props they require, if any! */}
+    {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
 };

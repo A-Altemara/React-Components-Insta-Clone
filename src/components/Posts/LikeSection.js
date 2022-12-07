@@ -14,8 +14,8 @@ const LikeSection = props => {
     likePost ( numberOfLikes+ 1)
   }
 
-// console.log(props.likes)
-console.log(numberOfLikes)
+
+
 
   return (
     <div>
