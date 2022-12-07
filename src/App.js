@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import Posts from './components/Posts/Posts';
 import SearchBar from './components/SearchBar/SearchBar';
 // Import the dummyData
+import Post from './components/Posts/Post';
 import dummyData from './dummy-data';
 import './App.css';
 
@@ -33,16 +34,24 @@ const App = () => {
      */
 
     const increaseLikes = () => {
-      setPost( post.map() ) 
+      // setPost( props.posts.map(post=>{
+      //   if(postId === post.id){
+      //     [...post + 1]
+      //   } else {
+      //     post
+      //   }
+      // }) ) 
 
     }        
   };
-
+console.log("test")
   return (
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
       <SearchBar />
-      <Posts userName={post.userName} />
+      {/* <Posts userName={post.userName} /> */}
+      
+      <Post post={dummyData[0]} />
             {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );
