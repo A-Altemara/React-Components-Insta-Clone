@@ -33,8 +33,21 @@ const App = () => {
         - otherwise just return the post object unchanged.
      */
 
+        /** this was the example for this
+         * const changeStatus = (id) => {
+            const updatedFriends = friends.map(fr => {
+              if(fr.id === id){
+               return {...fr, married: !fr.married}
+                } else {
+                 return fr;
+                 }
+                 })
+               setFriends(updatedFriends);
+            }
+         */
+
     const increaseLikes = () => {
-      setPosts( posts.map(post=>{
+     const updatedLikes = posts.map(post=>{
         if(postId === post.id){
           let newPost = {...post}
           newPost.likes++
@@ -42,8 +55,8 @@ const App = () => {
         } else {
            return post
         }
-      }) ) 
-
+      })
+    setPosts(updatedLikes)
     }  
     
     increaseLikes()
