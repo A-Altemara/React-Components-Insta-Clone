@@ -49,9 +49,11 @@ const App = () => {
     const increaseLikes = () => {
      const updatedLikes = posts.map(post=>{
         if(postId === post.id){
-          let newPost = {...post}
-          newPost.likes++
-          return newPost
+          return {...post, likes: post.likes++ }
+
+          // let newPost = {...post}
+          // newPost.likes++
+          // return newPost
         } else {
            return post
         }
